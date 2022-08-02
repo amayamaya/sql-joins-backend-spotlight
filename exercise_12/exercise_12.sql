@@ -7,6 +7,6 @@ LEFT JOIN customer ON address.address_id = customer.address_id
 LEFT JOIN rental ON customer.customer_id = rental.customer_id
 LEFT JOIN payment ON rental.rental_id = payment.rental_id
 WHERE payment.amount IS NOT NULL
-GROUP BY city.city_id
+GROUP BY city.city
 ORDER BY SUM(payment.amount) DESC
 LIMIT 10
